@@ -1,7 +1,7 @@
 FROM daocloud.io/library/centos:centos7
 MAINTAINER DM_Test
 
-RUN yum update
+RUN yum -y update
 RUN mkdir -p /usr/share/clowdflows/
 RUN yum install -y unzip wget
 ADD ./ /usr/share/clowdflows/
