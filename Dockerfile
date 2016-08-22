@@ -1,4 +1,4 @@
-FROM docker pull daocloud.io/library/centos:centos7
+FROM daocloud.io/library/centos:centos7
 MAINTAINER DM_Test
 
 RUN yum update
