@@ -1,4 +1,4 @@
-FROM daocloud.io/library/centos:centos7
+FROM daocloud.io/library/mysql:5.5.45
 MAINTAINER DM_Test
 
 RUN yum -y update
