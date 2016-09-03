@@ -1,4 +1,5 @@
-FROM daocloud.io/library/mysql:5.5.45
+FROM centos:7.2.1511
+
 MAINTAINER DM_Test
 
 RUN mkdir -p /usr/share/clowdflows/
