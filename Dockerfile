@@ -9,6 +9,7 @@ ADD ./ /usr/share/clowdflows/
 RUN yum install -y python-matplotlib epel-release python-pip
 RUN pip install discomll
 RUN pip install -r /usr/share/clowdflows/requirements.txt
+RUN cp /usr/share/clowdflows/mothra/__local_settings.py /usr/share/clowdflows/mothra/local_settings.py
 
 EXPOSE 9001
 EXPOSE 8000
