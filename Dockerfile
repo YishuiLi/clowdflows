@@ -7,13 +7,12 @@ RUN yum install -y  libxslt libxml2 readline-devel openssl openssl-devel zlib zl
 RUN mkdir -p /usr/share/clowdflows/
 ADD ./ /usr/share/clowdflows/
 RUN yum install -y python-matplotlib epel-release python-pip
-RUN cd /usr/share/clowdflows/
 RUN pip install discomll
 RUN pip install -r /usr/share/clowdflows/requirements.txt
-RUN python manage.py syncdb --noinput
-RUN python manage.py migrate
-RUN python manage.py createsuperuser
-RUN python manage.py import_all
+RUN python /usr/share/clowdflows/manage.py syncdb --noinput
+RUN python /usr/share/clowdflows/manage.py migrate
+RUN python /usr/share/clowdflows/manage.py createsuperuser
+RUN python /usr/share/clowdflows/manage.py import_all
 
 EXPOSE 9001
 EXPOSE 8000
