@@ -7,7 +7,7 @@ RUN yum install -y  libxslt libxml2 readline-devel openssl openssl-devel zlib zl
 RUN mkdir -p /usr/share/clowdflows/
 ADD ./ /usr/share/clowdflows/
 RUN cd /usr/share/clowdflows/
-RUN yum install python-matplotlib epel-release python-pip
+RUN yum install -y python-matplotlib epel-release python-pip
 RUN pip install -r requirements.txt
 RUN pip install discomll
 RUN python manage.py syncdb --noinput
