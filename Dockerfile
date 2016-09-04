@@ -9,10 +9,6 @@ ADD ./ /usr/share/clowdflows/
 RUN yum install -y python-matplotlib epel-release python-pip
 RUN pip install discomll
 RUN pip install -r /usr/share/clowdflows/requirements.txt
-RUN python /usr/share/clowdflows/manage.py syncdb --noinput
-RUN python /usr/share/clowdflows/manage.py migrate
-RUN python /usr/share/clowdflows/manage.py createsuperuser
-RUN python /usr/share/clowdflows/manage.py import_all
 
 EXPOSE 9001
 EXPOSE 8000
