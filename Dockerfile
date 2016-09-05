@@ -14,7 +14,5 @@ RUN python /usr/share/clowdflows/manage.py syncdb --noinput
 RUN python /usr/share/clowdflows/manage.py migrate
 RUN python /usr/share/clowdflows/manage.py import_all
 
-
-
 EXPOSE 9001
 EXPOSE 8000
