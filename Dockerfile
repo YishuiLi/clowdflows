@@ -10,7 +10,9 @@ RUN yum install -y python-matplotlib epel-release python-pip
 RUN pip install discomll
 RUN pip install -r /usr/share/clowdflows/requirements.txt
 RUN cp /usr/share/clowdflows/mothra/__local_settings.py /usr/share/clowdflows/mothra/local_settings.py
-RUN cd /usr/share/clowdflows/
+RUN python /usr/share/clowdflows/manage.py syncdb --noinput
+RUN python /usr/share/clowdflows/manage.py migrate
+RUN python /usr/share/clowdflows/manage.py import_all
 
 EXPOSE 9001
 EXPOSE 8000
